@@ -3,6 +3,7 @@
 import React, { useState, ChangeEvent, FormEvent } from "react";
 import ContactInfo from "./ContactInfo";
 import Image from "next/image";
+import emailService, { SendEmailRequest } from "../../../services/send-email";
 
 import contactImg from "../../../public/images/contact/contact.png";
 import shape from "../../../public/images/contact/shape.png";
@@ -15,7 +16,7 @@ interface FormData {
 }
 
 const ContactForm: React.FC = () => {
-  const [formData, setFormData] = useState<FormData>({
+  const [formData, setFormData] = useState<SendEmailRequest>({
     name: "",
     email: "",
     phone: "",
@@ -34,8 +35,23 @@ const ContactForm: React.FC = () => {
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Add your form submission logic here.
-    console.log("Form submitted:", formData);
+
+    if (
+      formData.name !== "" &&
+      formData.email !== "" &&
+      formData.message !== "" &&
+      formData.phone !== ""
+    ) {
+      emailService
+        .sendEmail(formData)
+        .then(() => {
+          console.log("has been sent");
+        })
+        .catch(() => {
+          console.log("hasn't been sent");
+        })
+        .finally(() => {});
+    }
   };
 
   return (
@@ -43,7 +59,7 @@ const ContactForm: React.FC = () => {
       <div className="contact-area ptb-100">
         <div className="container">
           <div className="row justify-content-center">
-            <div 
+            <div
               className="col-lg-5 col-md-12 pe-5"
               data-aos="fade-up"
               data-aos-delay="100"
@@ -51,12 +67,17 @@ const ContactForm: React.FC = () => {
               data-aos-once="true"
             >
               <div className="contact-image">
-                <Image src={contactImg} alt="contact" width={700} height={1012} />
+                <Image
+                  src={contactImg}
+                  alt="contact"
+                  width={700}
+                  height={1012}
+                />
               </div>
             </div>
 
             <div className="col-lg-7 col-md-12 ps-5">
-              <div 
+              <div
                 className="contact-form-wrap"
                 data-aos="fade-up"
                 data-aos-delay="200"
