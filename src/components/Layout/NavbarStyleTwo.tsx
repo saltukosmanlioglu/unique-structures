@@ -1,13 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import {
-  Accordion,
-  AccordionItem,
-  AccordionItemHeading,
-  AccordionItemButton,
-  AccordionItemPanel,
-} from "react-accessible-accordion";
+import { Accordion } from "react-accessible-accordion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
@@ -52,14 +46,17 @@ const NavbarStyleTwo: React.FC = () => {
 
   return (
     <>
-      <nav className="navbar navbar-expand-lg navbar-with-different-color" id="navbar">
+      <nav
+        className="navbar navbar-expand-lg navbar-with-different-color"
+        id="navbar"
+      >
         <div className="container-fluid position-relative">
           <Link className="navbar-brand" href="/">
             <Image src={logo} alt="Logo" width={113} height={54} />
           </Link>
 
           {/* Toggle navigation */}
-          <button 
+          <button
             className={classTwo}
             type="button"
             data-toggle="collapse"
@@ -79,47 +76,11 @@ const NavbarStyleTwo: React.FC = () => {
             <ul className="navbar-nav ms-auto">
               <li className="nav-item">
                 <Link
-                  className="nav-link dropdown-toggle"
-                  href="#"
-                  onClick={(e) => e.preventDefault()}
+                  href="/"
+                  className={`nav-link ${currentRoute === "/" ? "active" : ""}`}
                 >
                   Home
                 </Link>
-
-                <ul className="dropdown-menu">
-                  <li className="nav-item">
-                    <Link
-                      className={`nav-link ${
-                        currentRoute === "/" ? "active" : ""
-                      }`}
-                      href="/"
-                    >
-                      Architecture Home
-                    </Link>
-                  </li>
-
-                  <li className="nav-item">
-                    <Link
-                      className={`nav-link ${
-                        currentRoute === "/interior-home/" ? "active" : ""
-                      }`}
-                      href="/interior-home/"
-                    >
-                      Interior Home
-                    </Link>
-                  </li>
-
-                  <li className="nav-item">
-                    <Link
-                      className={`nav-link ${
-                        currentRoute === "/architecture-studio/" ? "active" : ""
-                      }`}
-                      href="/architecture-studio/"
-                    >
-                      Architecture Studio
-                    </Link>
-                  </li>
-                </ul>
               </li>
 
               <li className="nav-item">
@@ -135,106 +96,24 @@ const NavbarStyleTwo: React.FC = () => {
 
               <li className="nav-item">
                 <Link
-                  className="nav-link dropdown-toggle"
-                  href="#"
-                  onClick={(e) => e.preventDefault()}
+                  href="/portfolio/"
+                  className={`nav-link ${
+                    currentRoute === "/portfolio/" ? "active" : ""
+                  }`}
                 >
                   Portfolio
                 </Link>
-
-                <ul className="dropdown-menu">
-                  <li className="nav-item">
-                    <Link
-                      href="/portfolio/"
-                      className={`nav-link ${
-                        currentRoute === "/portfolio/" ? "active" : ""
-                      }`}
-                    >
-                      Portfolio Style 01
-                    </Link>
-                  </li>
-
-                  <li className="nav-item">
-                    <Link
-                      href="/portfolio-2/"
-                      className={`nav-link ${
-                        currentRoute === "/portfolio-2/" ? "active" : ""
-                      }`}
-                    >
-                      Portfolio Style 02
-                    </Link>
-                  </li>
-
-                  <li className="nav-item">
-                    <Link
-                      href="/portfolio/portfolio-details/"
-                      className={`nav-link ${
-                        currentRoute === "/portfolio/portfolio-details/"
-                          ? "active"
-                          : ""
-                      }`}
-                    >
-                      Portfolio Details
-                    </Link>
-                  </li>
-                </ul>
               </li>
 
               <li className="nav-item">
                 <Link
-                  className="nav-link dropdown-toggle"
-                  href="#"
-                  onClick={(e) => e.preventDefault()}
+                  href="/services/"
+                  className={`nav-link ${
+                    currentRoute === "/services/" ? "active" : ""
+                  }`}
                 >
-                  Pages
+                  Our Services
                 </Link>
-
-                <ul className="dropdown-menu">
-                  <li className="nav-item">
-                    <Link
-                      className="nav-link dropdown-toggle"
-                      href="#"
-                      onClick={(e) => e.preventDefault()}
-                    >
-                      Services
-                    </Link>
-
-                    <ul className="dropdown-menu">
-                      <li className="nav-item">
-                        <Link
-                          href="/services/"
-                          className={`nav-link ${
-                            currentRoute === "/services/" ? "active" : ""
-                          }`}
-                        >
-                          Services
-                        </Link>
-                      </li>
-
-                      <li className="nav-item">
-                        <Link
-                          href="/services/service-details/"
-                          className={`nav-link ${
-                            currentRoute === "/services/service-details/" ? "active" : ""
-                          }`}
-                        >
-                          Services Details
-                        </Link>
-                      </li>
-                    </ul>
-                  </li>
-
-                  <li className="nav-item">
-                    <Link
-                      href="/request-quote/"
-                      className={`nav-link ${
-                        currentRoute === "/request-quote/" ? "active" : ""
-                      }`}
-                    >
-                      Request A Quote
-                    </Link>
-                  </li>
-                </ul>
               </li>
 
               <li className="nav-item">
@@ -298,50 +177,12 @@ const NavbarStyleTwo: React.FC = () => {
 
             <div className="modal-body">
               <Accordion allowZeroExpanded>
-                <AccordionItem uuid="a">
-                  <AccordionItemHeading>
-                    <AccordionItemButton>Home</AccordionItemButton>
-                  </AccordionItemHeading>
-
-                  <AccordionItemPanel>
-                    <ul className="menu-list">
-                      <li>
-                        <Link
-                          className={`nav-link ${
-                            currentRoute === "/" ? "active" : ""
-                          }`}
-                          href="/"
-                        >
-                          Architecture Home
-                        </Link>
-                      </li>
-
-                      <li>
-                        <Link
-                          className={`nav-link ${
-                            currentRoute === "/interior-home/" ? "active" : ""
-                          }`}
-                          href="/interior-home/"
-                        >
-                          Interior Home
-                        </Link>
-                      </li>
-
-                      <li>
-                        <Link
-                          className={`nav-link ${
-                            currentRoute === "/architecture-studio/"
-                              ? "active"
-                              : ""
-                          }`}
-                          href="/architecture-studio/"
-                        >
-                          Architecture Studio
-                        </Link>
-                      </li>
-                    </ul>
-                  </AccordionItemPanel>
-                </AccordionItem>
+                <Link
+                  href="/"
+                  className={`nav-link ${currentRoute === "/" ? "active" : ""}`}
+                >
+                  Home
+                </Link>
 
                 <Link
                   href="/about-us/"
@@ -352,95 +193,23 @@ const NavbarStyleTwo: React.FC = () => {
                   About Us
                 </Link>
 
-                <AccordionItem uuid="b">
-                  <AccordionItemHeading>
-                    <AccordionItemButton>Portfolio</AccordionItemButton>
-                  </AccordionItemHeading>
+                <Link
+                  href="/portfolio"
+                  className={`nav-link ${
+                    currentRoute === "/portfolio" ? "active" : ""
+                  }`}
+                >
+                  Portfolio
+                </Link>
 
-                  <AccordionItemPanel>
-                    <ul className="menu-list">
-                      <li>
-                        <Link
-                          href="/portfolio/"
-                          className={`nav-link ${
-                            currentRoute === "/portfolio/" ? "active" : ""
-                          }`}
-                        >
-                          Portfolio Style 01
-                        </Link>
-                      </li>
-
-                      <li>
-                        <Link
-                          href="/portfolio-2/"
-                          className={`nav-link ${
-                            currentRoute === "/portfolio-2/" ? "active" : ""
-                          }`}
-                        >
-                          Portfolio Style 02
-                        </Link>
-                      </li>
-
-                      <li>
-                        <Link
-                          href="/portfolio/portfolio-details/"
-                          className={`nav-link ${
-                            currentRoute === "/portfolio/portfolio-details/"
-                              ? "active"
-                              : ""
-                          }`}
-                        >
-                          Portfolio Details
-                        </Link>
-                      </li>
-                    </ul>
-                  </AccordionItemPanel>
-                </AccordionItem>
-
-                <AccordionItem uuid="c">
-                  <AccordionItemHeading>
-                    <AccordionItemButton>Pages</AccordionItemButton>
-                  </AccordionItemHeading>
-
-                  <AccordionItemPanel>
-                    <ul className="menu-list">
-                      <li>
-                        <Link
-                          href="/services/"
-                          className={`nav-link ${
-                            currentRoute === "/services/" ? "active" : ""
-                          }`}
-                        >
-                          Services
-                        </Link>
-                      </li>
-
-                      <li>
-                        <Link
-                          href="/services/service-details/"
-                          className={`nav-link ${
-                            currentRoute === "/services/service-details/"
-                              ? "active"
-                              : ""
-                          }`}
-                        >
-                          Services Details
-                        </Link>
-                      </li>
-
-                      <li>
-                        <Link
-                          href="/request-quote/"
-                          className={`nav-link ${
-                            currentRoute === "/request-quote/" ? "active" : ""
-                          }`}
-                        >
-                          Request A Quote
-                        </Link>
-                      </li>
-                    </ul>
-                  </AccordionItemPanel>
-                </AccordionItem>
+                <Link
+                  href="/services"
+                  className={`nav-link ${
+                    currentRoute === "/services" ? "active" : ""
+                  }`}
+                >
+                  Services
+                </Link>
 
                 <Link
                   href="/contact-us/"

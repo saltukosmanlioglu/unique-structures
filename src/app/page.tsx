@@ -1,45 +1,56 @@
-import Navbar from "@/components/Layout/Navbar";
-import HeroBanner from "@/components/ArchitectureHome/HeroBanner";
-import AboutUsContent from "@/components/ArchitectureHome/AboutUsContent";
-import WhatWeDo from "@/components/ArchitectureHome/WhatWeDo";
-import Overview from "@/components/ArchitectureHome/Overview";
-import CoreFeatures from "@/components/ArchitectureHome/CoreFeatures";
-import LatestRecognition from "@/components/ArchitectureHome/LatestRecognition";
-import RecentProjects from "@/components/ArchitectureHome/RecentProjects";
+import NavbarStyleTwo from "@/components/Layout/NavbarStyleTwo";
+import HeroBanner from "@/components/ArchitectureStudio/HeroBanner";
+import AboutUsContent from "@/components/ArchitectureStudio/AboutUsContent";
+import Services from "@/components/ArchitectureStudio/Services";
+import Partner from "@/components/Common/Partner";
+import LatestRecognition from "@/components/ArchitectureStudio/LatestRecognition";
+import Projects from "@/components/ArchitectureStudio/Projects";
+import ClientsFeedbackSlider from "@/components/Common/ClientsFeedbackSlider";
 import TextSlide from "@/components/Common/TextSlide";
-import Process from "@/components/ArchitectureHome/Process";
-import ClientsFeedbackSlider from "@/components/ArchitectureHome/ClientsFeedbackSlider";
-import ContactForm from "@/components/ContactUs/ContactForm";
+import TeamMember from "@/components/Common/TeamMember";
+import ContactFormStyleTwo from "@/components/ContactUs/ContactFormStyleTwo";
 import Footer from "@/components/Layout/Footer";
 
-export default function Home() {
+export default function Page() {
   return (
-    <div className="full-bg-black-color">
-      <Navbar />
+    <>
+      <NavbarStyleTwo />
 
       <HeroBanner />
 
       <AboutUsContent />
 
-      <WhatWeDo />
+      <Services />
 
-      <Overview />
-
-      <CoreFeatures />
+      <div className="pt-100">
+        <Partner />
+      </div>
 
       <LatestRecognition />
 
-      <RecentProjects />
+      <Projects />
 
-      <TextSlide />
+      <div className="section-area-with-line">
+        <div className="lines">
+          <div className="line"></div>
+          <div className="line"></div>
+          <div className="line"></div>
+        </div>
 
-      <Process />
+        <div className="ptb-100">
+          <ClientsFeedbackSlider />
+        </div>
 
-      <ClientsFeedbackSlider />
+        <TextSlide />
 
-      <ContactForm />
+        <TeamMember />
+      </div>
+
+      <div className="pb-100">
+        <ContactFormStyleTwo />
+      </div>
 
       <Footer />
-    </div>
+    </>
   );
 }
