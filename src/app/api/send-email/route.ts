@@ -36,3 +36,7 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: err }, { status: 400 });
   }
 }
+
+export async function OPTIONS() {
+  return NextResponse.json({}, { status: 200 });
+}
