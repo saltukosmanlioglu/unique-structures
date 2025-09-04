@@ -3,20 +3,21 @@ import nodemailer from "nodemailer";
 
 export async function POST(req: Request) {
   const body = await req.json();
+  const email = 'yunusemrey85@gmail.com'
 
   const transporter = nodemailer.createTransport({
     service: "gmail",
     port: 465,
     secure: true,
     auth: {
-      user: process.env.EMAIL_USER,
-      pass: process.env.EMAIL_PASS,
+      user: email,
+      pass: process.env.password,
     },
   });
 
   const mailOptions = {
-    from: process.env.EMAIL_USER,
-    to: "yunusemrey85@gmail.com",
+    from: email,
+    to: email,
     subject: "Unique Structure",
     html: `
       <div>
