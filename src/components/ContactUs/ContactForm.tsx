@@ -8,13 +8,6 @@ import emailService, { SendEmailRequest } from "../../../services/send-email";
 import contactImg from "../../../public/images/contact/contact.png";
 import shape from "../../../public/images/contact/shape.png";
 
-interface FormData {
-  name: string;
-  email: string;
-  phone: string;
-  message: string;
-}
-
 const ContactForm: React.FC = () => {
   const [formData, setFormData] = useState<SendEmailRequest>({
     name: "",
@@ -47,8 +40,8 @@ const ContactForm: React.FC = () => {
         .then(() => {
           console.log("has been sent");
         })
-        .catch(() => {
-          console.log("hasn't been sent");
+        .catch((res) => {
+          console.log("hasn't been sent", res);
         })
         .finally(() => {});
     }
