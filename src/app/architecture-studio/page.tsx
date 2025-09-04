@@ -17,7 +17,7 @@ export default function Page() {
     <>
       <NavbarStyleTwo />
 
-      <HeroBanner />
+      {/* <HeroBanner /> */}
 
       <AboutUsContent />
 
