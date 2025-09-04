@@ -9,7 +9,6 @@ import RecentProjects from "@/components/ArchitectureHome/RecentProjects";
 import TextSlide from "@/components/Common/TextSlide";
 import Process from "@/components/ArchitectureHome/Process";
 import ClientsFeedbackSlider from "@/components/ArchitectureHome/ClientsFeedbackSlider";
-import BlogPost from "@/components/ArchitectureHome/BlogPost";
 import ContactForm from "@/components/ContactUs/ContactForm";
 import Footer from "@/components/Layout/Footer";
 
@@ -37,8 +36,6 @@ export default function Home() {
       <Process />
 
       <ClientsFeedbackSlider />
-
-      <BlogPost />
 
       <ContactForm />
 

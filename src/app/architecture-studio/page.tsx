@@ -8,7 +8,6 @@ import Projects from "@/components/ArchitectureStudio/Projects";
 import ClientsFeedbackSlider from "@/components/Common/ClientsFeedbackSlider";
 import TextSlide from "@/components/Common/TextSlide";
 import TeamMember from "@/components/Common/TeamMember";
-import BlogPost from "@/components/ArchitectureStudio/BlogPost";
 import ContactFormStyleTwo from "@/components/ContactUs/ContactFormStyleTwo";
 import Footer from "@/components/Layout/Footer";
  
@@ -17,7 +16,7 @@ export default function Page() {
     <>
       <NavbarStyleTwo />
 
-      {/* <HeroBanner /> */}
+      <HeroBanner />
 
       <AboutUsContent />
 
@@ -45,10 +44,6 @@ export default function Page() {
         <TextSlide />
 
         <TeamMember />
-      </div>
-
-      <div className="pt-100">
-        <BlogPost />
       </div>
 
       <div className="pb-100">

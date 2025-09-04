@@ -2,21 +2,30 @@
 
 import React from "react";
 import Link from "next/link";
-import dynamic from "next/dynamic";
 
-// SSR devre dışı bırakılmış dynamic import
-const ReactCompareImage = dynamic(() => import("react-compare-image"), {
-  ssr: false,
-});
+import {
+  ReactCompareSlider,
+  ReactCompareSliderImage,
+} from "react-compare-slider";
 
 const HeroBanner: React.FC = () => {
   return (
     <div className="as-banner-area">
       <div className="container-fluid">
         <div className="as-banner-image">
-          <ReactCompareImage
-            leftImage="/images/main-banner/as-banner-after.jpg"
-            rightImage="/images/main-banner/as-banner-before.jpg"
+          <ReactCompareSlider
+            itemOne={
+              <ReactCompareSliderImage
+                src="/images/main-banner/as-banner-after.jpg"
+                alt="After"
+              />
+            }
+            itemTwo={
+              <ReactCompareSliderImage
+                src="/images/main-banner/as-banner-before.jpg"
+                alt="Before"
+              />
+            }
           />
         </div>
 
