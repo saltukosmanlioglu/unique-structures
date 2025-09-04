@@ -1,22 +1,48 @@
-import React from "react";
-import Head from "next/head";
+import Navbar from "@/components/Layout/Navbar";
+import HeroBanner from "@/components/ArchitectureHome/HeroBanner";
+import AboutUsContent from "@/components/ArchitectureHome/AboutUsContent";
+import WhatWeDo from "@/components/ArchitectureHome/WhatWeDo";
+import Overview from "@/components/ArchitectureHome/Overview";
+import CoreFeatures from "@/components/ArchitectureHome/CoreFeatures";
+import LatestRecognition from "@/components/ArchitectureHome/LatestRecognition";
+import RecentProjects from "@/components/ArchitectureHome/RecentProjects";
+import TextSlide from "@/components/Common/TextSlide";
+import Process from "@/components/ArchitectureHome/Process";
+import ClientsFeedbackSlider from "@/components/ArchitectureHome/ClientsFeedbackSlider";
+import BlogPost from "@/components/ArchitectureHome/BlogPost";
+import ContactForm from "@/components/ContactUs/ContactForm";
+import Footer from "@/components/Layout/Footer";
 
 export default function Home() {
   return (
-    <React.Fragment>
-      <Head>
-        <title>Under Construction</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </Head>
+    <div className="full-bg-black-color">
+      <Navbar />
 
-      <div className="min-h-screen bg-gray-100 flex items-center justify-center">
-        <div className="text-center">
-          <h1 className="text-4xl font-bold text-gray-800 mb-4">
-            Under Construction
-          </h1>
-          <p className="text-gray-600">Coming Soon</p>
-        </div>
-      </div>
-    </React.Fragment>
+      <HeroBanner />
+
+      <AboutUsContent />
+
+      <WhatWeDo />
+
+      <Overview />
+
+      <CoreFeatures />
+
+      <LatestRecognition />
+
+      <RecentProjects />
+
+      <TextSlide />
+
+      <Process />
+
+      <ClientsFeedbackSlider />
+
+      <BlogPost />
+
+      <ContactForm />
+
+      <Footer />
+    </div>
   );
 }
